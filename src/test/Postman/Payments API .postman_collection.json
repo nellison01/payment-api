@@ -1,0 +1,155 @@
+{
+	"info": {
+		"name": "Payments API ",
+		"_postman_id": "b9e0eefc-c78d-c571-ceac-892a7115d2e0",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Payments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/payments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payments"
+					]
+				},
+				"description": "Returns an array of payment objects."
+			},
+			"response": []
+		},
+		{
+			"name": "GET Payment",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/payments/93cbad63-4bee-406e-9edd-d49d37c9799b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payments",
+						"93cbad63-4bee-406e-9edd-d49d37c9799b"
+					]
+				},
+				"description": "Returns a payment object using a payment id."
+			},
+			"response": []
+		},
+		{
+			"name": "Update payment",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"cc0140fb-a43d-43c1-bee2-e5025ccb4043\",\n    \"type\": \"PAYMENT\",\n    \"version\": 3,\n    \"orgId\": \"e3a4c7d1-c4ce-4284-9fb0-c677210df41f\",\n    \"attributes\": {\n        \"amount\": 56.63,\n        \"currency\": \"GBP\",\n        \"processingDate\": \"04/01/2018\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/payments/cc0140fb-a43d-43c1-bee2-e5025ccb4043",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payments",
+						"cc0140fb-a43d-43c1-bee2-e5025ccb4043"
+					]
+				},
+				"description": "Supply payment id and change values to update payment object."
+			},
+			"response": []
+		},
+		{
+			"name": "INSERT new payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"PAYMENT\",\n    \"version\": 3,\n    \"orgId\": \"743d5b63-8e6f-432e-a8fa-c5d8d2ee5fcb\",\n    \"attributes\": {\n        \"amount\": 1000.01,\n        \"currency\": \"USD\",\n        \"processingDate\": \"02/01/2018\"\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/payments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payments"
+					]
+				},
+				"description": "Change values in request body and submit to add payment. Id is auto generate by api, do not need to supply."
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Payment",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/payments/e5aefe57-4c8f-4192-b2cc-230a7d7c08dd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payments",
+						"e5aefe57-4c8f-4192-b2cc-230a7d7c08dd"
+					]
+				},
+				"description": "Supply Id of the payment you wish to delete."
+			},
+			"response": []
+		}
+	]
+}
